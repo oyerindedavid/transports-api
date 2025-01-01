@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(morgan('combined'));
 
 app.use(cors({
-    origin: 'https://transport-444705.nn.r.appspot.com',
+    origin: 'http://localhost:3000',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true,
 }));

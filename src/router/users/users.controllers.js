@@ -62,6 +62,17 @@ async function addUser(req, res) {
     }
 }
 
+// Delete a user by name
+async function deleteUser(req, res) {
+    try {
+        const { fullName } = req.body; //change fullname if other parameter are to be used
+        const users = await Users.deleteOne({fullName});
+        return res.status(200).json(users);
+    } catch (err) {
+        return res.status(500).json({ message: err.message });
+    }
+}
+
 // Edit all user information with their assigned operator's ID
 // async function assignOperator(req, res) {
 //     const { opId, geolocation } = req.body;
@@ -85,4 +96,4 @@ async function addUser(req, res) {
 //     }
 // }
 
-module.exports = { getUsers, addUser};
+module.exports = { getUsers, addUser, deleteUser};
