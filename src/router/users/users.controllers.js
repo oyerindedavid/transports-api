@@ -54,10 +54,11 @@ async function addUser(req, res) {
 
         return res.status(201).json({
             data: newUser,
+            ok: true,
         });
 
     } catch (err) {
-        return res.status(500).json({ message: err});
+        return res.status(500).json({ message: err });
     }
 }
 
